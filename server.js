@@ -28,7 +28,8 @@ app.get('/api/stream-url/:videoId', (req, res) => {
   
   console.log(`Obteniendo URL para video ID: ${videoId}`);
   
-  const command = `yt-dlp -f bestaudio -g --no-warnings https://www.youtube.com/watch?v=${videoId}`;
+  // Modificar el comando en server.js
+const command = `yt-dlp -f bestaudio -g --no-warnings --cookies-from-browser chrome https://www.youtube.com/watch?v=${videoId}`;
   console.log(`Ejecutando comando: ${command}`);
   
   exec(command, (error, stdout, stderr) => {
