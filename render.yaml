@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ritmora-stream-api
+    env: node
+    buildCommand: npm install && apt-get update && apt-get install -y python3-pip && pip install yt-dlp
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
